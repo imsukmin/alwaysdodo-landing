@@ -15,7 +15,7 @@
         <div class="title en">Until next DODO</div>
         <div class="counter counter-dday en" v-if="dday">
           <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
-          <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
+          <div class="d-day" v-else-if="dday === 0">D-Day</div>
           <div class="d-day" v-else>지.남</div>
         </div>
         <div class="counter counter-null en" v-else>
@@ -58,7 +58,7 @@
           if (a.date === b.date) return 0
           return a.date < b.date ? 1 : -1
         }),
-        dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
+        dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null,
       }
     },
     mounted() {
@@ -66,9 +66,7 @@
     },
     methods: {
       calculateDday() {
-        if (NEXT_DODO_DATE) {
-          this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
-        }
+        this.dday = NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null
       },
     }
   }

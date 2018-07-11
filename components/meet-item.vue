@@ -6,24 +6,24 @@
     </div>
     <transition name="toggle">
       <div class="body" v-if="isOpened">
-        <div class="intro" v-html="meet.contents"></div>
+        <MeetItemIntro :contents="meet.contents" />
         <div class="users">
-          <div class="user" v-for="user in meet.users" :key="user.id">
-            <div class="name">{{ user.name }}</div>
-            <ul class="works">
-              <li class="work" v-for="work in user.works" :key="work">
-                <a v-if="user.body" :href="'https://github.com/alwaysdodo/works/blob/master/' + meet.date + '/' + user.id + '.md'" target="_blank">{{ work }}</a>
-                <template v-else>{{ work }}</template>
-              </li>
-            </ul>
-          </div>
+          <MeetItemUser v-for="user in meet.users" :user="user" :meetDate="meet.date" :key="user.id" />
         </div>
       </div>
     </transition>
   </div>
 </template>
+
 <script>
+import MeetItemIntro from "~/components/meet-item-intro.vue"
+import MeetItemUser from "~/components/meet-item-user.vue"
+
 export default {
+  components: {
+    MeetItemIntro,
+    MeetItemUser
+  },
   props: {
     meet: null,
     opened: Boolean,
