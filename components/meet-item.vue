@@ -6,7 +6,7 @@
     </div>
     <transition name="toggle">
       <div class="body" v-if="isOpened">
-        <MeetItemIntro :contents="meet.contents" />
+        <div class="intro" v-html="meet.contents" />
         <div class="users">
           <MeetItemUser v-for="user in meet.users" :user="user" :meetDate="meet.date" :key="user.id" />
         </div>
@@ -16,12 +16,10 @@
 </template>
 
 <script>
-import MeetItemIntro from "~/components/meet-item-intro.vue"
 import MeetItemUser from "~/components/meet-item-user.vue"
 
 export default {
   components: {
-    MeetItemIntro,
     MeetItemUser
   },
   props: {
