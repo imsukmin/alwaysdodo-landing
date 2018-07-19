@@ -13,13 +13,12 @@
     <div class="section section-intro">
       <div class="container">
         <div class="title en">Until next DODO</div>
-        <div class="counter counter-dday en" v-if="dday">
-          <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
-          <div class="d-day" v-else-if="dday === 0">D-Day</div>
-          <div class="d-day" v-else>지.남</div>
-        </div>
-        <div class="counter counter-null en" v-else>
+        <div class="counter counter-null en" v-if="dday === null || (dday !== null && dday < 0)">
           Coming Soon
+        </div>
+        <div class="counter counter-dday en" v-else>
+          <div class="d-day" v-if="dday > 0">D-{{ dday }}</div>
+          <div class="d-day" v-else>D-Day</div>
         </div>
         <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">
@@ -61,13 +60,5 @@
         dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null,
       }
     },
-    mounted() {
-      this.calculateDday()
-    },
-    methods: {
-      calculateDday() {
-        this.dday = NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null
-      },
-    }
   }
 </script>
