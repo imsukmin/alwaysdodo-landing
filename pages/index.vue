@@ -52,10 +52,19 @@
       MeetItem,
     },
     data() {
+      const nextDodoYYYYMMDD = NEXT_DODO_DATE ? NEXT_DODO_DATE.format("YYYYMMDD") : null 
       return {
         meets: meets.sort((a, b) => {
           if (a.date === b.date) return 0
           return a.date < b.date ? 1 : -1
+        }).map(meet => {
+          if (nextDodoYYYYMMDD === moment.tz(meet.date, "Asia/Seoul").format("YYYYMMDD")) {
+            return {
+              ...meet,
+              date: "Next DODO",
+            }
+          }
+          return meet
         }),
         dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null,
       }
