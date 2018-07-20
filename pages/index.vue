@@ -6,7 +6,7 @@
         <div class="logo"></div>
 
         <!-- <a class="button button-text">참가신청</a> -->
-        <a class="button button-icon" href="mailto:we.are.dodo.2018@gmail.com"></a>
+        <a class="button button-icon" href="mailto:hi@alwaysdodo.com"></a>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
         </div>
         <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">
-          <a class="button button-slack en" href="http://alwaysdodo.slack.com" target="blank">Slack</a>
+          <a class="button button-slack en" href="http://invite.alwaysdodo.com" target="blank">Slack</a>
           <a class="button button-gallery en" href="https://photos.app.goo.gl/HfCLGo3SB2F572yj6" target="blank">Gallery</a>
           <a class="button button-github en" href="https://github.com/alwaysdodo" target="blank">Github</a>
         </div>
