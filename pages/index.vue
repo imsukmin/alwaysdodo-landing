@@ -45,7 +45,7 @@
 
   const meets = require("~/assets/json/meets.json").meets
 
-  const NEXT_DODO_DATE = moment.tz("2018-07-20 19:30:00", "Asia/Seoul")
+  const NEXT_DODO_DATE = moment.tz("2018-08-24 19:30:00", "Asia/Seoul")
 
   export default {
     components: {
@@ -66,8 +66,11 @@
           }
           return meet
         }),
-        dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null,
+        dday: null,
       }
+    },
+    mounted() {
+      this.dday = NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "day") : null
     },
   }
 </script>
