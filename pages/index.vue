@@ -78,7 +78,7 @@
             if (a.id == b.id) {
               return 0
             }
-            return a.id > b.id ? 1 : -1
+            return a.id < b.id ? 1 : -1
           })
           .map(registry => registry.value),
       }
