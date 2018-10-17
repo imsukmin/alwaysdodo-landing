@@ -36,8 +36,8 @@
             <span class="label">Contact</span>
           </a>
         </div>
-        <div class="submit">
-          <a class="button" href="." ref="floatTrigger">참가신청</a>
+        <div class="submit" v-if="registerUrl">
+          <a class="button" :href="registerUrl" target="_blank" ref="floatTrigger">참가신청</a>
         </div>
       </div>
     </div>
@@ -63,18 +63,29 @@
   import "moment-timezone"
 
   export default {
+    async asyncData({app: {$axios}}) {
+      const response = await $axios.get("/registries")
+      const registries = response.data.registries || []
+
+      const ddayReg = registries.find((registry) => registry.name === "dday")
+      const registerUrlReg = registries.find((registry) => registry.name === "register_url")
+      return {
+        dday: ddayReg ? ddayReg.value : undefined,
+        registerUrl: registerUrlReg ? registerUrlReg.value : undefined,
+        meets: registries
+          .filter((registry) => registry.name === "meets[]")
+          .sort((a, b) => {
+            if (a.id == b.id) {
+              return 0
+            }
+            return a.id > b.id ? 1 : -1
+          })
+          .map(registry => registry.value),
+      }
+    },
     data() {
-      const dday = "2018-10-29"
       return {
         isDisplayFloating: false,
-        dday,
-        meets: [
-          {title: "DODO5", image: "https://picsum.photos/200/300/?random"},
-          {title: "DODO5", image: "https://picsum.photos/200/300/?random"},
-          {title: "DODO5", image: "https://picsum.photos/200/300/?random"},
-          {title: "DODO5", image: "https://picsum.photos/200/300/?random"},
-          {title: "DODO5", image: "https://picsum.photos/200/300/?random"},
-        ],
       }
     },
     mounted() {

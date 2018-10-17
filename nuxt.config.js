@@ -1,3 +1,8 @@
+
+require("dotenv").config(process.cwd())
+
+const AXIOS_BASEURL = process.env.AXIOS_BASEURL || "http://api.alwaysdodo.com"
+
 module.exports = {
   head: {
     title: 'We Are DODO',
@@ -26,6 +31,9 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
   ],
+  axios: {
+    baseURL: AXIOS_BASEURL,
+  },
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
