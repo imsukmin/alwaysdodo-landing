@@ -53,8 +53,8 @@
       </div>
     </div>
 
-    <transition name="floating" :duration="500">
-      <a class="button button-floating" v-if="isDisplayFloating">참가신청</a>
+    <transition name="floating" :duration="500" v-if="registerUrl">
+      <a class="button button-floating" :href="registerUrl" target="_blank"  v-if="isDisplayFloating">참가신청</a>
     </transition>
   </div>
 </template>
@@ -107,7 +107,9 @@
     },
     methods: {
       calculateFloating() {
-        this.isDisplayFloating = this.$refs.floatTrigger.getBoundingClientRect().bottom < 0
+        if (this.$refs.floatTrigger) {
+          this.isDisplayFloating = this.$refs.floatTrigger.getBoundingClientRect().bottom < 0
+        }
       },
     },
   }
