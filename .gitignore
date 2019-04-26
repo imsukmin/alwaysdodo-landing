@@ -1,3 +1,7 @@
+.env.prod.yml
+.serverless
+.envrc
+
 # dependencies
 node_modules
 
@@ -9,5 +13,3 @@ npm-debug.log
 
 # Nuxt generate
 dist
-
-.env
