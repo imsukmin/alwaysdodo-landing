@@ -1,0 +1,74 @@
+.page-about {
+  .subject {
+    font-size: 77px;
+    color: #ffffff;
+    font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke: 1.5px #7151f4; 
+  }
+  .title {
+    font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #373541;
+    margin-top: 95px;
+  }
+  .title:first-child {
+    margin-top: 10px;
+  }
+  .description {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: #373541;
+    margin-top: 10px;
+  }
+  .image-dodo-logo {
+    width: 378px;
+    height: 215px;
+    border-radius: 4px;
+    background-image: url(~assets/images/logo-dodo.png);
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 18px;
+    margin-bottom: 65px;
+  }
+  .image-sponsor {
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-top: 26px;
+
+    .cowndog {
+      width: 178px;
+      height: 74px;
+      background-image: url(~assets/images/logo-cowndog.png);
+    }
+    .seeso {
+      width: 178px;
+      height: 74px;
+      background-image: url(~assets/images/logo-seeso.png);
+    }
+  }
+  .organizer {
+    font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #7151f4;
+    margin-top: 6px;
+  }
+  .organizer:first-child {
+    margin-top: 20px;
+  }
+}

@@ -13,9 +13,7 @@
           </div>
         </div>
         <div class="subtitle en">DO <span class="highlight">What you want to</span> DO</div>
-
         <dodo-menu/>
-
         <div class="buttons">
           <a class="button en" href="https://www.facebook.com/alwaysdodo" target="blank">
             <i class="ico-facebook"></i>
@@ -61,7 +59,7 @@
 
   export default {
     components: {
-      DodoMenu,
+      DodoMenu, // 사용 할 땐 CamelCase 에서 camel-case 로 사용 가능 하다
       About
     },
     async asyncData({app: {$axios}}) {

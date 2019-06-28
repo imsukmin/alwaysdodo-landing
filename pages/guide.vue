@@ -13,9 +13,7 @@
           </div>
         </div>
         <div class="subtitle en">DO <span class="highlight">What you want to</span> DO</div>
-
         <dodo-menu/>
-
         <div class="buttons">
           <a class="button en" href="https://www.facebook.com/alwaysdodo" target="blank">
             <i class="ico-facebook"></i>
@@ -45,7 +43,7 @@
     </div>
 
     <div class="section-body">
-      <about/>
+      <guide />
     </div>
 
     <transition name="floating" :duration="500" v-if="registerUrl">
@@ -57,12 +55,12 @@
   import * as moment from "moment"
   import "moment-timezone"
   import DodoMenu from "./../components/DodoMenu.vue"
-  import About from "./../components/AboutLayout.vue"
+  import Guide from "./../components/GuideLayout.vue"
 
   export default {
     components: {
       DodoMenu,
-      About
+      Guide
     },
     async asyncData({app: {$axios}}) {
       const response = await $axios.get("/registries")
