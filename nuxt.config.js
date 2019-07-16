@@ -25,6 +25,9 @@ module.exports = {
     "~/assets/scss/home.scss",
   ],
   loading: { color: "#3B8070" },
+  modules: [
+    '@nuxtjs/apollo',
+  ],
   apollo: {
     tokenName: 'alwaysdodo-landing',
     includeNodeModules: true,

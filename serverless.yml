@@ -1,5 +1,5 @@
 service:
-  name: alwaysdodo-landing
+  name: alwaysdodo-www
 
 plugins:
   - serverless-nuxt/plugin
@@ -30,8 +30,14 @@ provider:
 custom:
   nuxt:
     version: v0.0.1
-    bucketName: alwaysdodo-landing-${self:provider.stage}
+    bucketName: alwaysdodo-www-${self:provider.stage}
     assetsPath: .nuxt/dist
+  customDomain:
+    stage: prod
+    domainName: alwaysdodo.com
+    certificateName: alwaysdodo.com
+    createRoute53Record: true
+    endpointType: regional
 
 functions:
   nuxt:

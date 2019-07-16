@@ -21,7 +21,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async refresh({ commit }, text) {
+  async refresh({ commit }) {
     commit('startLoading')
     const client = this.app.apolloProvider.defaultClient
     const response = await client.query({
