@@ -1,5 +1,5 @@
 
-const AXIOS_BASEURL = process.env.AXIOS_BASEURL || "http://api.alwaysdodo.com"
+const AXIOS_BASEURL = process.env.AXIOS_BASEURL || "https://graph.alwaysdodo.com"
 
 module.exports = {
   head: {
@@ -25,11 +25,24 @@ module.exports = {
     "~/assets/scss/home.scss",
   ],
   loading: { color: "#3B8070" },
-  modules: [
-    "@nuxtjs/axios",
-  ],
-  axios: {
-    baseURL: AXIOS_BASEURL,
+  apollo: {
+    tokenName: 'alwaysdodo-landing',
+    includeNodeModules: true,
+    defaultOptions: {
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network',
+      },
+    },
+    // required
+    clientConfigs: {
+      default: {
+        httpEndpoint: `${AXIOS_BASEURL}/graphql`,
+        httpLinkOptions: {
+          credentials: 'same-origin'
+        },
+      },
+    }
   },
   build: {
     extend (config, { isDev, isClient }) {

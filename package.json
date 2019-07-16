@@ -10,14 +10,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
-    "jsdom": "^11.11.0",
+    "@nuxtjs/apollo": "^4.0.0-rc8",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.17",
     "normalize.css": "^8.0.0",
     "nuxt": "^1.0.0",
-    "serverless-nuxt": "0.0.6",
-    "tween.js": "^16.6.0"
+    "serverless-nuxt": "0.0.6"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
