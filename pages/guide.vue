@@ -10,7 +10,7 @@
         <div class="description">할 수 있습니다. 잘 새게 되어있어요! 새로운 사람들과 10시간을 보내면 기분 좋은 긴장감과 설렘으로 절대 잠이 오지 않을 걸요!</div>
 
         <div class="title">🤓 10시간 동안 꼬박 작업하나요?</div>
-        <div class="description"><div class="description">할 수 있습니다. 잘 새게 되어있어요! 새로운 사람들과 10시간을 보내면 기분 좋은 긴장감과 설렘으로 절대 잠이 오지 않을 걸요!</div></div>
+        <div class="description"><div class="description">내내 집중하기는 아무래도 어렵죠. 12시에 시작되는 야식타임과 새벽의 네트워킹 타임에 참여하세요. 슬랙에서 피드백(혹은 잡담)을 나누거나 플레이리스트에 당신의 선곡 실력을 뽐내보세요. 10시간은 은근히 짧은 시간입니다.</div></div>
       </div>
       <div class="subject">Rule</div>
       <div class="description">

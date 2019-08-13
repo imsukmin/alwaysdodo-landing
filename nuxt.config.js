@@ -13,8 +13,8 @@ module.exports = {
     ],
     link: [
       { rel: "apple-touch-icon", sizes: "120x120", href: "/apple-touch-icon.png" },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "icon", type: "image/gif", sizes: "32x32", href: "/favicon.gif" },
+      { rel: "icon", type: "image/gif", sizes: "16x16", href: "/favicon.gif" },
       { rel: "manifest", href: "/site.webmanifest" },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5" },
       { rel: "stylesheet", type: "text/css", href: "//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" },
