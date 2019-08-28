@@ -1,5 +1,5 @@
 <template>
-  <div class="page-poster"> 
+  <div class="page-poster">
     <div class="container">
       <div class="subject">Poster</div>
       <div class="meets" v-if="isLoaded">
