@@ -89,7 +89,6 @@ module.exports = {
         meets.forEach(meet => {
           feed.addItem({
             title: JSON.parse(meet).title,
-            link: 'https://alwaysdodo.com/',
             description: `<img src="${JSON.parse(meet).image}">`,
           })
         })
