@@ -58,7 +58,7 @@ module.exports = {
       async create(feed) {
         feed.options = {
           title: 'Always DODO',
-          link: 'https://alwaysdodo.com/,
+          link: 'https://alwaysdodo.com/',
           description: 'alwaysdodo',
         }
 
