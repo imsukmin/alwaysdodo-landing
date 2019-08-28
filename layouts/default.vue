@@ -30,7 +30,7 @@
             <i class="ico-slack"></i>
             <span class="label">Slack</span>
           </a>
-          <a class="button en" href="https://photos.app.goo.gl/T38goHXNeuRqfhoA9" target="blank">
+          <a class="button en" href="https://photos.app.goo.gl/zN3ztUzmq9m4FMip7" target="blank">
             <i class="ico-gallery"></i>
             <span class="label">Gallery</span>
           </a>
