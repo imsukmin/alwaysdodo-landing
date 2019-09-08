@@ -1,4 +1,5 @@
 
+const axios = require('axios')
 const AXIOS_BASEURL = process.env.AXIOS_BASEURL || "https://graph.alwaysdodo.com"
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
   loading: { color: "#3B8070" },
   modules: [
     '@nuxtjs/apollo',
+    '@nuxtjs/feed',
   ],
   apollo: {
     tokenName: 'alwaysdodo-landing',
@@ -48,6 +50,48 @@ module.exports = {
       },
     }
   },
+  feed: [
+    // A default feed configuration object
+    {
+      path: '/feed/interview.xml', // The route to your feed.
+      async create (feed) {
+        
+        const posts = await (axios.get('https://api.brunch.co.kr/v1/magazine/45174/articles')).then(res => res.data.data.list).catch(e => {
+          console.log(e)
+          return e.response
+        })
+        if(posts === undefined) {
+          console.log('something wrong', posts)
+          return false
+        }
+        feed.options = {
+          title: 'AlwaysDODO interview Feed',
+          link: 'https://alwaysdodo.com/feed/interview.xml',
+          description: 'AlwaysDODO interview Feed!!!',
+        }
+        posts.forEach(post => {
+          feed.addItem({
+            title: post.article.title,
+            id: post.article.seq + 1,
+            link: `https://brunch.co.kr/@outlines/${post.article.no}`,
+            description: post.article.contentSummary,
+            content: post.article.contentSummary
+          })
+        })
+      
+        feed.addCategory('alwaysDodo')
+      
+        feed.addContributor({
+          name: 'Jiyoon @ Toss',
+          email: '',
+          link: 'https://alwaysdodo.com/'
+        })
+      },
+      cacheTime: 1000 * 60 * 60 * 24 * 30, // How long should the feed be cached ==> one month
+      type: 'rss2', // Can be: rss2, atom1, json1
+      data: ['Some additional data'] //will be passed as 2nd argument to `create` function
+    }
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
